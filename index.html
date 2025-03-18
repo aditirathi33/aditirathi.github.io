@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Aditi Rathi</title>
+    <style>
+        .markdown-container img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        .markdown-container h2 {
+            font-weight: bold;
+        }
+
+        .markdown-container ul {
+            list-style-type: disc;
+            padding-left: 1.25rem;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .education-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .education-item {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .education-container img {
+            height: 100px;
+            width: auto;
+            max-width: 100%;
+            margin: 0 auto 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-container {
+            margin-top: 2rem;
+        }
+
+        .contact-container p {
+            margin: 0.5rem 0;
+        }
+
+        .section-container {
+            margin-bottom: 3.5rem;
+        }
+
+        .nav-item {
+            margin: 0 15px;
+        }
+
+        .title-container {
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-image {
+            width: 300px;
+            height: 200px;
+            object-fit: contain;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="dark-mode relative">
+    <style>
+        .dark-mode .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
+            background-color: #333333;
+        }
+
+        .dark-mode {
+            background-color: #1a1a1a;
+        }
+
+        .dark-mode footer,
+        .dark-mode footer .text-gray-600 {
+            color: #f8f8f8;
+        }
+
+        .dark-mode .text-white,
+        .dark-mode .text-black,
+        .dark-mode .text-gray-900,
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3,
+        .dark-mode p,
+        .dark-mode h4,
+        .dark-mode .bg-white .card-content,
+        .dark-mode .bg-white div {
+            color: #fff1d3;
+        }
+
+        .dark-mode .bg-white {
+            background-color: #1a1a1a;
+        }
+
+        .dark-mode .shadow-md {
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.06);
+        }
+    </style>
+    <div id="particles-js"></div>
+    <nav class="p-4 flex flex-wrap items-center justify-between w-full px-2 md:px-4">
+        <div>
+            <span class="text-black font-bold"><a link rel="preload" href="aditirathiresume.pdf" as="document">Resume</a></span>
+        </div>
+        <div class="flex-grow text-center">
+            <span class="nav-item text-black font-bold"><a href="#about-me-container">About</a></span>
+            <span class="nav-item text-black font-bold"><a href="#experience-container">Experience</a></span>
+            <span class="nav-item text-black font-bold"><a href="#projects-container">Projects</a></span>
+            <span class="nav-item text-black font-bold"><a href="#education-container">Education</a></span>
+        </div>
+        <button id="dark-mode-toggle" class="ml-4 p-2 text-black rounded shadow-md">☀️</button>
+    </nav>
+
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div id="header-container" class="px-4 py-5 mt-8 space-x-4">
+            <h1 class="text-8xl font-bold mb-10">Aditi Rathi</h1>
+            <h2 class="text-xl mb-3">Bachelor's in Computer Science @SPPU
+                <br><b>A small force with massive potential</b></h2>
+            <br>
+            <div class="flex space-x-4">
+                <a href="https://www.linkedin.com/in/aditirathi33?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/aditirathi33" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:aditirathi340@gmail.com" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://medium.com/@aditirathi340" target="_blank" class="text-xl text-black hover:text-pink-600 transition-colors duration-200">
+                    <i class="fab fa-medium"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="content-container" class="flex flex-col md:flex-row w-full flex-wrap mt-6 mb-20 mx-1 md:mx-0">
+        
+        <!-- About Me Section -->
+        <div id="about-me-container" class="section-container w-full md:w-3/3 px-4 py-5 mb-5 md:mb-0">
+            <h1 class="text-2xl font-semibold mb-4"><i class="fa-solid fa-user"></i> About Me</h1>
+            <div class="about-me-content flex flex-col md:flex-row items-center">
+                <div class="about-me-picture md:w-1/3 w-full flex justify-center mb-4 md:mb-0">
+                    <img src="assets/Aditi.jpg" alt="Aditi RAthi" class="rounded-full shadow-lg" style="width: 250px; height: 265px; object-fit: cover;">
+                </div>
+                <div class="about-me-text md:w-2/3 w-full">
+                    <h3 class="text-sm italic mb-4">Hey there! I welcome you all in this digital world of mine!</h3>
+
+                    <p class="mb-4">
+                        
+It looks like you’ve stumbled upon my digital world—glad to have you here! 🌟
+                    </br>
+                    I’m Aditi Rathi, a Computer Science Engineering student with a passion for AI, Machine Learning, and App Development. I love turning ideas into reality—whether it’s building intelligent solutions or experimenting with tech. And if I had to pick a coding language to represent me? Java—structured, powerful, and ever-evolving!                </p>
+                    
+                    <p>Beyond tech, I’m passionate about social impact, equality, and sustainability. When I’m not building something new, I’m dreaming, travelling, singing, dancing, or embracing my cat-like curiosity! 😄 
+                    </p>
+                    <p>I believe that big changes start small, and I’m here to make a difference—one project, one idea, and one step at a time. Let’s connect and build something amazing together!💡</p>
+                    <h2 class="text-xl mt-4 mb-4">TECHNICAL SKILLS</h2>
+                    <div class="badges mt-4">
+                        <p class="flex flex-wrap justify-center">
+                            <!-- Machine Learning and AI -->
+                           
+
+                            <!-- Programming Languages -->
+                            <img src="https://img.shields.io/badge/Python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python" class="badge" />
+                            <img src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" class="badge" />
+                            <img src="https://img.shields.io/badge/C++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" class="badge" />
+                            <img src="https://img.shields.io/badge/SQL-%234479A1.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" class="badge" />
+                            
+                            </br>
+
+
+                            <!-- Web Development -->
+                            <img src="https://img.shields.io/badge/React-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=black" alt="React" class="badge" />
+                            <img src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" class="badge" />
+
+                            <!-- Tools & Platforms -->
+                            <img alt="Static Badge" src="https://img.shields.io/badge/android-studio?style=flat&logo=androidstudio&logoSize=auto&label=Android-Studio">
+                            <img src="badges/java.png" alt="Java" class="id1" style="width:80px; height: 50px;" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Section -->
+        <div id="experience-container" class="section-container w-full md:w-3/3 px-4 py-5 mb-5 md:mb-0">
+            <h1 class="text-2xl font-semibold mb-4"><i class="fa-solid fa-briefcase"></i> Experience</h1>
+            <div id="experience-list" class="gap-4 flex-wrap">
+                <h2><ul type="circle">
+                    <li>
+                        <b>President, ACM PES MCOE</b>
+                        <li>Planed and Organized Events: Coordinated workshops, hackathons, seminars, coding competitions, and technical talks. </li> 
+                    </li>
+                </br>
+                    <li>
+                        <b>Remote full stack Intern
+                            , Greeneye Technologies Ltd,UK</b>
+                        <li>Developing a website, with a platform adaptive chatbot : Project-based Internship  experience </li> 
+                    
+                    </li>
+                </br>
+                
+
+                </ul></h2>
+                <!-- Experience content will be loaded dynamically -->
+            </div>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects-container" class="section-container w-full md:w-3/3 px-4 py-5 mb-5 md:mb-0">
+            <h1 class="text-2xl font-semibold mb-4"><i class="fa-solid fa-code"></i> Projects</h1>
+            <div id="projects-list" class="grid grid-cols-1 md:grid-cols-3 gap-4 flex-wrap">
+                <h2><ul type="circle">
+                    <li>
+                        <b>Farm Management System  </b>
+                        <li>Developed a Farm Management System that enables farmers to sell agricultural products directly to consumers via an online platform. Implemented database-driven features for user authentication, product management, and sales tracking, ensuring scalability and data integrity. Integrated user authentication, product management, and sales tracking features, ensuring scalability and secure database operations.
+                            <li>Tools Used: MySQL,DBMS,JavaScript (Node.js), Python (Flask) </li> </li> 
+                    </li>
+                </br>
+                    <li>
+                        <b>Disaster Resilience Application</b>
+                        <li>Developed an application used in an emergency/disaster, which will send SOS message along with the location to the concerned person, used android for front end, connected it to the firebase for data storing.<li>Tools Used: Android, Firebase, Python. </li> 
+                    
+                    </li>
+                </br>
+            </br>
+            <li>
+                <b>E-commerce Website (2024)</b>
+                <li>Designed a user-friendly platform for seamless online shopping experiences. <li>
+                    Tools Used: CSS, HTML, MySQL, JavaScript 
+                </li> 
+            
+            </li>
+        </br>
+                
+
+                </ul>
+            </h2>
+            </div>
+        </div>
+
+        
+
+        <!-- Education Section -->
+        <div id="education-container" class="section-container w-full md:w-3/3 px-4 py-5 mb-5 md:mb-0">
+            <h1 class="text-2xl font-semibold mb-4"><i class="fa-solid fa-graduation-cap"></i> Education</h1>
+            <div class="education-container">
+                
+                    <div class="education-item">
+                        <img src="assets/Savitribai_Phule_Pune_University_Logo.png" alt="SPPU Logo" />
+                        <h3 class="text-xl mt-4 mb-4">Bachelor of Engineering in Computer Engineering</h3>
+                        <h4 class="text-sm mb-4">Savitribai Phule Pune University</h4>
+                        <h4 class="text-sm mb-4">2022 - 2026</h4>
+                        <h4 class="text-sm mb-4">current GPA: 8.38/10</h4>
+                        <h4 class="text-sm mt-4 mb-4">Relevant Courses</h4>
+                        <h4 class="text-sm mb-4">Artificial Intelligence</h4>
+                        <h4 class="text-sm mb-4">Cloud Computing</h4>
+                        <h4 class="text-sm mb-4">Data Science and database Management</h4>
+                        <h4 class="text-sm mb-4"> Machine Learning</h4>
+                        <h4 class="text-sm mb-4">Operating Systems</h4>
+                        <h4 class="text-sm mb-4"> Deep Learning</h4>
+                        <h4 class="text-sm mb-4">Data Structures And Algorithms</h4>
+                        <h4 class="text-sm mb-4"> Natural Language Processing</h4>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="extra">
+            
+            <h2> <b>Other Certifications And social Work</b></h2>
+            <ul>
+            </br>
+        </br>
+                <li>
+                    <h4>Python (Google IT automation)</h4>
+                </li>
+            </br>
+                <li>
+                    <h4>Java (Maharashtra Business Training Board )</h4>
+                </li>
+            </br>
+                <li>
+                    <h4>Full-Stack Web Developer (Udemy )</h4>
+                </li>
+            </br>
+                <li>
+                    <h4>Forengers (NGO)</h4>
+                    
+
+                </li>
+            </ul>
+
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/showdown@1.9.1/dist/showdown.min.js"></script>
+<script>
+// Particles.js configuration
+particlesJS('particles-js', {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#888888' },
+        shape: { type: 'triangle' },
+        opacity: { value: 0.6, random: true },
+        size: { value: 5, random: true },
+        line_linked: {
+            enable: true,
+            distance: 130,
+            color: '#888888',
+            opacity: 0.4,
+            width: 1
+        },
+        move: {
+            enable: true,
+            speed: 3,
+            direction: 'none',
+            random: true,
+            straight: false,
+            out_mode: 'out',
+            bounce: true,
+        }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: {
+            onhover: { enable: true, mode: 'repulse' },
+            onclick: { enable: true },
+            resize: true
+        },
+    },
+    retina_detect: true
+});
+
+// Dark mode functionality
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
+
+function applyDarkMode() {
+    const isDarkMode = localStorage.getItem('dark-mode') === 'true';
+    if (isDarkMode) {
+        body.classList.add('dark-mode');
+        darkModeToggle.innerText = "☀";
+    } else {
+        body.classList.remove('dark-mode');
+        darkModeToggle.innerText = "🌕";
+    }
+}
+
+applyDarkMode();
+
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDarkModeOn = body.classList.contains('dark-mode');
+    localStorage.setItem('dark-mode', isDarkModeOn);
+    darkModeToggle.innerText = isDarkModeOn ? "☀" : "🌕";
+});
+
+// Dynamic content loading
+// //const experienceList = document.getElementById('experience-list');
+// //const projectsList = document.getElementById('projects-list');
+// //const converter = new showdown.Converter();
+
+// //async function loadMarkdownContent(filePath, containerId) {
+//    // try {
+//         const response = await fetch(`https://github.com/aditirathi33/aditi_rathi.git${filePath}`);
+//         const text = await response.text();
+//         const html = converter.makeHtml(text);
+//         document.getElementById(containerId).innerHTML += `
+//             <div class="markdown-container bg-white p-4 rounded shadow-md transition-colors duration-200 hover:bg-gray-100">
+//                 ${html}
+//             </div>
+//         `;
+//     } catch (error) {
+//         console.error('Error loading markdown:', error);
+//     }
+// }
+
+// // Load experience
+// loadMarkdownContent('experience/wilo.md', 'experience-list');
+
+// // Load projects
+// const projects = ['ai-resume.md', 'time-banking.md', 'llm-analysis.md', 'agro-advice.md'];
+// projects.forEach(project => {
+//     loadMarkdownContent(`projects/${project}`, 'projects-list');
+// });
+</script>
+</body>
+    </body>
+    </html>
