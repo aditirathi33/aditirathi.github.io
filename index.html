@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditi Rathi | Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0b1730;
+      --surface: rgba(255, 255, 255, 0.07);
+      --surface-strong: rgba(255, 255, 255, 0.115);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f8fafc;
+      --muted: #aab8cc;
+      --accent: #7dd3fc;
+      --accent2: #8b5cf6;
+      --accent3: #34d399;
+      --nav: rgba(7, 17, 31, 0.82);
+      --shadow: rgba(125, 211, 252, 0.16);
+    }
+
+    body.light {
+      --bg: #f7fbff;
+      --bg2: #eef6ff;
+      --surface: rgba(255, 255, 255, 0.78);
+      --surface-strong: rgba(255, 255, 255, 0.96);
+      --border: rgba(15, 23, 42, 0.11);
+      --text: #0f172a;
+      --muted: #526174;
+      --accent: #2563eb;
+      --accent2: #7c3aed;
+      --accent3: #0891b2;
+      --nav: rgba(255, 255, 255, 0.84);
+      --shadow: rgba(37, 99, 235, 0.13);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      transition: background .35s ease, color .35s ease;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -5;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(125,211,252,.16), transparent 34%),
+        radial-gradient(circle at 82% 12%, rgba(139,92,246,.14), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(52,211,153,.12), transparent 30%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+    }
+
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: -4;
+      opacity: .035;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    .line-field {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      opacity: .08;
+      background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+      background-size: 110px 110px;
+      mask-image: radial-gradient(circle at center, black, transparent 78%);
+    }
+
+    .orb {
+      position: fixed;
+      z-index: -2;
+      border-radius: 999px;
+      filter: blur(76px);
+      opacity: .32;
+      animation: orbMove 12s ease-in-out infinite alternate;
+    }
+
+    .orb.one { width: 330px; height: 330px; left: -90px; top: 18%; background: var(--accent); }
+    .orb.two { width: 380px; height: 380px; right: -130px; bottom: 12%; background: var(--accent2); animation-delay: 2s; }
+
+    /* Dark-mode cosmic background */
+    .cosmic-sky {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      overflow: hidden;
+      opacity: .9;
+      transition: opacity .35s ease, visibility .35s ease;
+    }
+
+    body.light .cosmic-sky {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .cosmic-sky::before {
+      content: "";
+      position: absolute;
+      inset: -18%;
+      background:
+        radial-gradient(ellipse at 28% 32%, rgba(125,211,252,.20), transparent 30%),
+        radial-gradient(ellipse at 70% 46%, rgba(167,139,250,.18), transparent 34%),
+        radial-gradient(ellipse at 44% 72%, rgba(52,211,153,.10), transparent 28%);
+      filter: blur(28px);
+      opacity: .72;
+      animation: nebulaFlow 28s ease-in-out infinite alternate;
+    }
+
+    .cosmic-sky::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 22% 18%, rgba(255,255,255,.8) 0 1px, transparent 2px),
+        radial-gradient(circle at 76% 26%, rgba(255,255,255,.7) 0 1px, transparent 2px),
+        radial-gradient(circle at 65% 70%, rgba(125,211,252,.75) 0 1px, transparent 2px),
+        radial-gradient(circle at 38% 55%, rgba(255,255,255,.65) 0 1px, transparent 2px);
+      opacity: .55;
+      animation: twinkleStars 3.7s ease-in-out infinite alternate;
+    }
+
+    .stars {
+      position: absolute;
+      inset: -20%;
+      background-repeat: repeat;
+      transform: rotate(-8deg);
+    }
+
+    .stars-small {
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.85) 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(125,211,252,.65) 1px, transparent 1.5px);
+      background-size: 90px 90px, 140px 140px;
+      background-position: 0 0, 40px 60px;
+      animation: driftStars 95s linear infinite;
+      opacity: .45;
+    }
+
+    .stars-medium {
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.85) 1.4px, transparent 2px),
+        radial-gradient(circle, rgba(167,139,250,.65) 1.2px, transparent 2px);
+      background-size: 180px 180px, 260px 260px;
+      background-position: 80px 120px, 30px 40px;
+      animation: driftStarsReverse 130s linear infinite, twinkleStars 4.8s ease-in-out infinite alternate;
+      opacity: .38;
+    }
+
+    @keyframes driftStars {
+      from { transform: translate3d(0,0,0) rotate(-8deg); }
+      to { transform: translate3d(-180px,120px,0) rotate(-8deg); }
+    }
+
+    @keyframes driftStarsReverse {
+      from { transform: translate3d(0,0,0) rotate(-8deg); }
+      to { transform: translate3d(160px,-110px,0) rotate(-8deg); }
+    }
+
+    @keyframes twinkleStars {
+      from { opacity: .25; }
+      to { opacity: .68; }
+    }
+
+    @keyframes nebulaFlow {
+      from { transform: translate3d(-20px, 10px, 0) scale(1) rotate(0deg); }
+      to { transform: translate3d(36px, -26px, 0) scale(1.12) rotate(8deg); }
+    }
+
+    .planet {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(.1px);
+      opacity: .72;
+      box-shadow: inset -18px -22px 40px rgba(0,0,0,.35), 0 0 70px rgba(125,211,252,.16);
+    }
+
+    .planet::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 150%;
+      height: 28%;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      transform: translate(-50%, -50%) rotate(-18deg);
+      box-shadow: 0 0 22px rgba(125,211,252,.12);
+    }
+
+    .planet-one {
+      width: 112px;
+      height: 112px;
+      right: 7%;
+      top: 20%;
+      background:
+        radial-gradient(circle at 31% 28%, #ffffff 0 4%, #bfdbfe 10%, #60a5fa 35%, #1d4ed8 72%, #020617 100%);
+      animation: planetFloatOne 18s ease-in-out infinite alternate;
+    }
+
+    .planet-one::before {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 40% 36%, rgba(255,255,255,.18), transparent 18%),
+        radial-gradient(circle at 72% 60%, rgba(0,0,0,.18), transparent 22%);
+      opacity: .75;
+    }
+
+    .planet-two {
+      width: 68px;
+      height: 68px;
+      left: 8%;
+      bottom: 20%;
+      background:
+        radial-gradient(circle at 35% 28%, #fef3c7 0 6%, #c4b5fd 30%, #7c3aed 65%, #1e1b4b 100%);
+      animation: planetFloatTwo 22s ease-in-out infinite alternate;
+      opacity: .62;
+    }
+
+    @keyframes planetFloatOne {
+      from { transform: translate3d(0,0,0) rotate(0deg); }
+      to { transform: translate3d(-28px,34px,0) rotate(16deg); }
+    }
+
+    @keyframes planetFloatTwo {
+      from { transform: translate3d(0,0,0) rotate(0deg); }
+      to { transform: translate3d(36px,-28px,0) rotate(-20deg); }
+    }
+
+    .shooting-star {
+      position: absolute;
+      width: 140px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.9), transparent);
+      opacity: 0;
+      transform: rotate(-32deg);
+      filter: drop-shadow(0 0 8px rgba(125,211,252,.8));
+    }
+
+    .shooting-one {
+      top: 26%;
+      left: 65%;
+      animation: shoot 8s ease-in-out infinite;
+    }
+
+    .shooting-two {
+      top: 58%;
+      left: 20%;
+      animation: shoot 11s ease-in-out infinite 3.5s;
+    }
+
+    @keyframes shoot {
+      0%, 72% { opacity: 0; transform: translate3d(0,0,0) rotate(-32deg); }
+      76% { opacity: .9; }
+      88% { opacity: 0; transform: translate3d(-260px,160px,0) rotate(-32deg); }
+      100% { opacity: 0; }
+    }
+
+    @keyframes orbMove {
+      from { transform: translate3d(0,0,0) scale(.95); }
+      to { transform: translate3d(58px,-42px,0) scale(1.08); }
+    }
+
+    h1, h2, h3, .brand {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 24px 78px rgba(0,0,0,.22);
+    }
+
+    .glass-strong {
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 26px 90px rgba(0,0,0,.24);
+    }
+
+    .muted { color: var(--muted); }
+
+    .gradient-text {
+      background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .section-kicker {
+      color: var(--accent);
+      font-size: .76rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .section-title {
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      line-height: .98;
+      font-weight: 800;
+      letter-spacing: -.06em;
+    }
+
+    .nav-link {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: .9rem;
+      transition: .22s ease;
+    }
+    .nav-link:hover { color: var(--text); transform: translateY(-1px); }
+
+    .btn-primary, .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      border-radius: 999px;
+      padding: .86rem 1.14rem;
+      font-weight: 900;
+      transition: .25s ease;
+    }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: white; box-shadow: 0 18px 60px var(--shadow); }
+    .btn-secondary { background: var(--surface); border: 1px solid var(--border); color: var(--text); }
+    .btn-primary:hover, .btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 24px 75px var(--shadow); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .46rem .7rem;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .78rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .hero-visual { animation: heroFloat 5.2s ease-in-out infinite alternate; }
+    @keyframes heroFloat { from { transform: translateY(0) rotate(-.6deg); } to { transform: translateY(-18px) rotate(.6deg); } }
+
+    .portrait-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.06);
+      transition: opacity 1s ease, transform 5.5s ease;
+    }
+    .portrait-slide.active { opacity: 1; transform: scale(1); }
+
+    .about-card, .case-card, .mini-card, .achievement-card, .experience-card, .social-card, .repo-card, .post-card {
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+    .about-card:hover, .case-card:hover, .mini-card:hover, .achievement-card:hover, .experience-card:hover, .social-card:hover, .repo-card:hover, .post-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(125,211,252,.46);
+      box-shadow: 0 28px 88px var(--shadow);
+    }
+
+    .about-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(139,92,246,.18));
+      color: var(--accent);
+      font-size: 1.35rem;
+    }
+
+    .media-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.6rem;
+      min-height: 300px;
+      background: linear-gradient(135deg, rgba(125,211,252,.15), rgba(139,92,246,.14));
+      cursor: pointer;
+    }
+    .media-carousel.dynamic-height { height: auto; min-height: unset; }
+    .media-carousel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity .8s ease, transform 5s ease;
+    }
+    .media-carousel img.active { opacity: 1; transform: scale(1); }
+
+    .image-natural {
+      width: 100%;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 1.25rem;
+      background: rgba(0,0,0,.22);
+    }
+
+    .fallback-media {
+      height: 100%;
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .carousel-dots {
+      position: absolute;
+      left: 50%;
+      bottom: 15px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 7px;
+      z-index: 3;
+    }
+    .carousel-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,.46); transition: .22s ease; }
+    .carousel-dot.active { width: 24px; background: #fff; }
+
+    .achievement-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+    }
+    .achievement-card { min-width: min(420px, 88vw); scroll-snap-align: start; cursor: pointer; }
+
+    .marquee { overflow: hidden; mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent); }
+    .marquee-row { display: flex; gap: 1rem; min-width: max-content; animation: marquee 30s linear infinite; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: .75s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(3, 7, 18, .78);
+      backdrop-filter: blur(18px);
+    }
+    .modal.open { display: flex; }
+    .modal-panel {
+      width: min(1080px, 96vw);
+      max-height: 92vh;
+      overflow-y: auto;
+      border-radius: 2rem;
+      animation: modalIn .28s ease both;
+    }
+    @keyframes modalIn { from { opacity: 0; transform: translateY(18px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    .modal-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: flex; }
+
+    @media (max-width: 768px) {
+      .desktop-menu { display: none; }
+      .section-title { letter-spacing: -.045em; }
+      .media-carousel { min-height: 240px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="noise"></div>
+  <div class="line-field"></div>
+
+  <div class="cosmic-sky" aria-hidden="true">
+    <div class="stars stars-small"></div>
+    <div class="stars stars-medium"></div>
+    <div class="planet planet-one"></div>
+    <div class="planet planet-two"></div>
+    <div class="shooting-star shooting-one"></div>
+    <div class="shooting-star shooting-two"></div>
+  </div>
+
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10" style="background: var(--nav); backdrop-filter: blur(18px);">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#home" class="brand font-extrabold text-sm md:text-base tracking-tight">A Tiny Force With Massive Potential</a>
+
+      <div class="desktop-menu hidden md:flex items-center gap-6">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#social" class="nav-link">Social</a>
+        <a href="#live" class="nav-link">Live</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="res.pdf" target="_blank" class="btn-secondary !py-2 !px-4">Resume</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="btn-secondary !py-2 !px-3" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button id="menuToggle" class="md:hidden btn-secondary !py-2 !px-3" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden flex-col gap-4 px-5 pb-5">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#social" class="nav-link">Social</a>
+      <a href="#live" class="nav-link">Live</a>
+      <a href="#contact" class="nav-link">Contact</a>
+      <a href="res.pdf" target="_blank" class="nav-link">Resume</a>
+    </div>
+  </nav>
+
+  <section id="home" class="min-h-screen pt-32 pb-20 px-5 flex items-center">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-[1.08fr_0.92fr] gap-12 items-center">
+      <div class="reveal">
+        <div class="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-7">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-sm font-black muted">Intern @ Arvillium • CSE'26 • AI Builder</span>
+        </div>
+
+        <p class="section-kicker mb-5">Aditi Rathi</p>
+
+        <h1 class="text-5xl md:text-8xl font-extrabold tracking-[-0.075em] leading-[0.9]">
+          building tech with <span class="gradient-text">brain, heart & impact.</span>
+        </h1>
+
+        <p class="mt-8 text-lg md:text-xl muted max-w-2xl leading-relaxed">
+          Computer Science Engineering student working with AI, backend development, automation, computer vision, and assistive technology.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mt-9">
+          <a href="#work" class="btn-primary">Explore Work <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#live" class="btn-secondary">Latest Updates <i class="fa-solid fa-bolt"></i></a>
+        </div>
+
+        <div class="flex gap-5 mt-9 text-2xl">
+          <a class="hover:scale-125 transition" href="https://linkedin.com/in/aditirathi33" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a class="hover:scale-125 transition" href="https://github.com/aditirathi33" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a class="hover:scale-125 transition" href="https://instagram.com/okditi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a class="hover:scale-125 transition" href="https://x.com/AditiRathi33" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a class="hover:scale-125 transition" href="https://medium.com/@aditirathi340" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="relative h-[520px] rounded-[2rem] overflow-hidden glass-strong p-[1px]">
+          <div class="relative h-full rounded-[1.9rem] overflow-hidden">
+            <img class="portrait-slide active" src="1.jpg" alt="Aditi portrait 1" />
+            <img class="portrait-slide" src="2(2).jpg" alt="Aditi portrait 2" />
+            
+            <div class="absolute inset-x-5 bottom-5 glass rounded-2xl p-4">
+              <p class="font-extrabold text-xl">A Tiny Force With Massive Potential</p>
+              <p class="muted text-sm mt-1">CSE’26 | Intern @ Arvillium | AI/ML, Backend Systems, Computer Vision And Automation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl reveal">
+        <p class="section-kicker">About Me</p>
+        <h2 class="section-title mt-4">curious mind, practical builder.</h2>
+        <p class="muted mt-6 text-lg leading-relaxed">
+          Hi! I'm Aditi Rathi, a Computer Science Engineering student passionate about building tech that solves real-world problems. I enjoy exploring how intelligent systems can be built using code, data, and creativity.
+        </p>
+        <p class="muted mt-6 text-lg leading-relaxed">
+          Fun Fact: Powered by caffeine, curiosity, code, and cat cuddles.
+          </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+        <article class="about-card glass rounded-3xl p-6 reveal">
+          <div class="about-icon"><i class="fa-solid fa-briefcase"></i></div>
+          <h3 class="text-xl font-extrabold mt-5">Intern @ Arvillium</h3>
+          <p class="muted mt-3">Working on backend features, AI integration, automation, dashboards, and runtime monitoring.</p>
+        </article>
+
+        <article class="about-card glass rounded-3xl p-6 reveal">
+          <div class="about-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3 class="text-xl font-extrabold mt-5">AI/ML Explorer</h3>
+          <p class="muted mt-3">Interested in AI/ML, computer vision, backend systems, and Edge AI.</p>
+        </article>
+
+        <article class="about-card glass rounded-3xl p-6 reveal">
+          <div class="about-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3 class="text-xl font-extrabold mt-5">Practical Builder</h3>
+          <p class="muted mt-3">Love building projects with real-world impact, not just demo screens.</p>
+        </article>
+
+        <article class="about-card glass rounded-3xl p-6 reveal">
+          <div class="about-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <h3 class="text-xl font-extrabold mt-5">Writer & Creator</h3>
+          <p class="muted mt-3">Writer, creator, social media active, and proudly a cat person. 🐱</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl reveal">
+        <p class="section-kicker">Selected Work</p>
+        <h2 class="section-title mt-4">The Build Dump</h2>
+        <p class="muted mt-5 text-lg">Here’s a little collection of things I made while pretending I had everything under control.
+
+Projects, experiments, chaos, and a little bit of “wait… this actually works?”</p>
+      </div>
+
+      <article class="case-card glass rounded-[2rem] p-4 md:p-6 mt-12 reveal" data-open-modal="trinetra">
+        <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-6 items-stretch">
+          <div class="media-carousel" data-carousel='["trinetra.jpg", "trinetra01.jpg", "trinetra02.jpg", "trinetra03.jpg"]'>
+            <div class="fallback-media">
+              <div>
+                <i class="fa-solid fa-glasses text-7xl mb-5"></i>
+                <p class="text-2xl font-extrabold">TRINETRA</p>
+                <p class="text-white/75 mt-2">Click to expand</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3 md:p-5 flex flex-col justify-between">
+            <div>
+              <span class="tag">Certified Cool Project • Click to Open</span>
+              <h3 class="text-4xl md:text-5xl font-extrabold tracking-[-0.05em] mt-5">TRINETRA</h3>
+              <p class="gradient-text font-extrabold text-xl mt-2">AI-Powered Smart Glasses for Visually Impaired Users</p>
+              <p class="muted mt-5 leading-relaxed text-lg">Assistive wearable system using Raspberry Pi 5, YOLOv8, OpenCV, face recognition, ultrasonic obstacle detection, and offline audio feedback to support safer navigation.</p>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mt-8">
+              <span class="tag">Python</span><span class="tag">YOLOv8</span><span class="tag">OpenCV</span><span class="tag">Raspberry Pi 5</span><span class="tag">Edge AI</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="grid md:grid-cols-2 gap-5 mt-6">
+        <a href="#" class="mini-card glass rounded-3xl p-6 reveal">
+          <p class="section-kicker">Side Project</p>
+          <h3 class="text-2xl font-extrabold mt-2">CookWise</h3>
+          <p class="muted mt-3">AI-based Indian recipe generator suggesting meals from available ingredients, preferences, and meal type.</p>
+          <div class="flex flex-wrap gap-2 mt-5"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Firebase</span></div>
+        </a>
+
+        <a href="#" class="mini-card glass rounded-3xl p-6 reveal">
+          <p class="section-kicker">Side Project</p>
+          <h3 class="text-2xl font-extrabold mt-2">Disaster Resilience</h3>
+          <p class="muted mt-3">Android emergency response app with SOS alerts, Firebase updates, and Google Maps support.</p>
+          <div class="flex flex-wrap gap-2 mt-5"><span class="tag">Java</span><span class="tag">Android</span><span class="tag">Firebase</span></div>
+        </a>
+      </div>
+
+      <div class="mt-16 reveal">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div>
+            <p class="section-kicker">More Projects</p>
+            <h3 class="text-3xl font-extrabold mt-2">auto-loaded from GitHub</h3>
+          </div>
+          <a href="https://github.com/aditirathi33" target="_blank" class="btn-secondary">GitHub Profile <i class="fab fa-github"></i></a>
+        </div>
+        <div id="githubProjects" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+        <div>
+          <p class="section-kicker reveal">Tiny wins, big memories</p>
+          <h2 class="section-title mt-4 reveal">Moments that made it out of the camera roll</h2>
+          <p class="muted mt-5 max-w-2xl reveal"> Tap a card and let the magic unfold</p>
+        </div>
+        <div class="flex gap-3 reveal">
+          <button id="prevAchievement" class="btn-secondary !px-4"><i class="fa-solid fa-arrow-left"></i></button>
+          <button id="nextAchievement" class="btn-secondary !px-4"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+      <div id="achievementTrack" class="achievement-track mt-12"></div>
+    </div>
+  </section>
+
+  <section id="social" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <p class="section-kicker reveal">Social World</p>
+      <h2 class="section-title mt-4 reveal">where I post, write & create.</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-5 mt-12">
+        <a class="social-card glass rounded-3xl p-6 reveal" href="https://linkedin.com/in/aditirathi33" target="_blank">
+          <i class="fab fa-linkedin text-3xl gradient-text"></i>
+          <h3 class="font-extrabold text-xl mt-5">LinkedIn</h3>
+          <p class="muted mt-2">Experience, projects, and professional updates.</p>
+        </a>
+
+        <a class="social-card glass rounded-3xl p-6 reveal" href="https://github.com/aditirathi33" target="_blank">
+          <i class="fab fa-github text-3xl gradient-text"></i>
+          <h3 class="font-extrabold text-xl mt-5">GitHub</h3>
+          <p class="muted mt-2">Code, repositories, and project builds.</p>
+        </a>
+
+        <a class="social-card glass rounded-3xl p-6 reveal" href="https://instagram.com/okditi" target="_blank">
+          <i class="fab fa-instagram text-3xl gradient-text"></i>
+          <h3 class="font-extrabold text-xl mt-5">Instagram</h3>
+          <p class="muted mt-2">Creative posts, moments, and visual stories.</p>
+        </a>
+
+        <a class="social-card glass rounded-3xl p-6 reveal" href="https://x.com/AditiRathi33" target="_blank">
+          <i class="fab fa-x-twitter text-3xl gradient-text"></i>
+          <h3 class="font-extrabold text-xl mt-5">X</h3>
+          <p class="muted mt-2">Thoughts, updates, and quick ideas.</p>
+        </a>
+
+        <a class="social-card glass rounded-3xl p-6 reveal" href="https://medium.com/@aditirathi340" target="_blank">
+          <i class="fab fa-medium text-3xl gradient-text"></i>
+          <h3 class="font-extrabold text-xl mt-5">Medium</h3>
+          <p class="muted mt-2">Blogs, guides, and writing.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="live" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div>
+          <p class="section-kicker reveal">New from Aditi</p>
+          <h2 class="section-title mt-4 reveal">latest posts & fallbacks.</h2>
+          <p class="muted mt-5 max-w-2xl reveal">Medium can be fetched through RSS helpers. Instagram, X, and LinkedIn usually need official API access, so these cards gracefully fall back to profile links.</p>
+        </div>
+        <button id="refreshLive" class="btn-secondary reveal">Refresh <i class="fa-solid fa-rotate"></i></button>
+      </div>
+      <div id="livePosts" class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 px-5">
+    <div class="max-w-4xl mx-auto glass-strong rounded-[2rem] p-8 md:p-12 text-center reveal">
+      <p class="section-kicker">Contact</p>
+      <h2 class="section-title mt-4">let’s build something useful.</h2>
+      <p class="muted mt-5 text-lg">Open to internships, collaborations, AI projects, web systems, and creative technology ideas.</p>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <a href="mailto:aditirathi340@gmail.com" class="btn-primary">Email Me <i class="fa-solid fa-envelope"></i></a>
+        <a href="https://github.com/aditirathi33" target="_blank" class="btn-secondary">GitHub <i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/aditirathi33" target="_blank" class="btn-secondary">LinkedIn <i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center muted border-t border-white/10">© 2026 Aditi Rathi. Designed with code, curiosity, and useful chaos.</footer>
+
+  <button id="scrollTop" class="fixed bottom-6 right-6 btn-primary !p-4 hidden" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <div id="detailModal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-panel glass-strong p-5 md:p-8">
+      <div class="flex items-start justify-between gap-5 mb-6">
+        <div>
+          <p id="modalKicker" class="section-kicker">Details</p>
+          <h2 id="modalTitle" class="text-3xl md:text-5xl font-extrabold tracking-[-0.05em] mt-2"></h2>
+          <p id="modalDesc" class="muted mt-4 text-lg leading-relaxed"></p>
+        </div>
+        <button id="closeModal" class="btn-secondary !p-3" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modalGallery" class="modal-gallery"></div>
+      <div id="modalTags" class="flex flex-wrap gap-2 mt-6"></div>
+      <a id="modalLink" href="#" target="_blank" class="btn-primary mt-6 hidden">Open Link <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+  </div>
+
+  <script>
+    const dataItems = {
+      trinetra: {
+        kicker: 'Featured Project',
+        title: 'TRINETRA — AI-Powered Smart Glasses',
+        description: 'Assistive wearable system using Raspberry Pi 5, computer vision, YOLOv8, face recognition, ultrasonic obstacle detection, offline inference, and speech-based guidance for visually impaired users.',
+        images: ['trinetra.jpg','trinetra01.jpg','trinetra02.jpg','trinetra03.jpg','trinetra04.jpg'],
+        tags: ['Python','OpenCV','YOLOv8','Raspberry Pi 5','Pi Camera','GPIO','Edge AI']
+      },
+      winner: {
+        kicker: 'Achievement',
+        title: 'National Level Project Competition Winner',
+        description: 'Won first prize for TRINETRA, an AI-powered smart glasses project for visually impaired users.',
+        images: ['achievement-trinetra.jpg','trinetra.jpg','trinetra01.jpg',,'trinetra02.jpg','trinetra03.jpg','trinetra04.jpg','trinetra04.jpg'],
+        tags: ['Award','TRINETRA','AI','Assistive Tech']
+      },
+      forengers: {
+        kicker: 'Experience & Extracurricular',
+        title: 'Forengers NGO',
+        description: 'Managed social media, campaigns, awareness content, visual communication, and creative storytelling for NGO initiatives.',
+        images: ['forengers.jpg','forengers01.jpg','forengers02.jpg','forengers03.jpg'],
+        tags: ['Social Media','Campaigns','Design','NGO']
+      },
+      book: {
+        kicker: 'Published Author',
+        title: 'Back to the Seventeen',
+        description: 'Published creative work showing my writing, storytelling, and expressive side beyond coding.',
+        images: ['book.jpg','book02.jpg' ,'book01.jpg'],
+        tags: ['Author','Writing','Creative'],
+        link: 'https://www.amazon.in/Back-Seventeen-Aditi-Rathi/dp/1684948355'
+      },
+      acm: {
+        kicker: 'Leadership',
+        title: 'ACM Leadership',
+        description: 'Led student initiatives, design work, technical sessions, workshops, and community learning activities.',
+        images: ['acm.jpg','acm01.jpg','acm02.jpg','acm03.jpg'],
+        tags: ['Leadership','ACM','Workshops','Community']
+      }
+    };
+
+    const achievementCards = [
+      { id: 'winner', icon: 'fa-solid fa-trophy' },
+      { id: 'acm', icon: 'fa-solid fa-users' },
+      { id: 'forengers', icon: 'fa-solid fa-hands-holding-child' },
+      { id: 'book', icon: 'fa-solid fa-book-open' }
+      
+    ];
+
+    function createImageCarousel(container, images, title) {
+      const fallback = container.querySelector('.fallback-media');
+      let loaded = 0;
+      const dots = document.createElement('div');
+      dots.className = 'carousel-dots';
+
+      images.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = title + ' image ' + (index + 1);
+        img.className = index === 0 ? 'active' : '';
+        img.onload = () => { loaded++; if (fallback) fallback.style.display = 'none'; };
+        img.onerror = () => { img.remove(); if (loaded === 0 && fallback) fallback.style.display = 'grid'; };
+        container.appendChild(img);
+
+        const dot = document.createElement('span');
+        dot.className = index === 0 ? 'carousel-dot active' : 'carousel-dot';
+        dots.appendChild(dot);
+      });
+
+      container.appendChild(dots);
+    }
+
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      createImageCarousel(carousel, JSON.parse(carousel.dataset.carousel), 'carousel');
+    });
+
+    const achievementTrack = document.getElementById('achievementTrack');
+
+    achievementCards.forEach(({ id, icon }) => {
+      const item = dataItems[id];
+      const article = document.createElement('article');
+      article.className = 'achievement-card glass rounded-[2rem] p-4 reveal';
+      article.dataset.openModal = id;
+      article.innerHTML = `
+        <div class="media-carousel">
+          <div class="fallback-media">
+            <div>
+              <i class="${icon} text-6xl mb-4"></i>
+              <p class="text-2xl font-extrabold">${item.title}</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-4">
+          <p class="section-kicker">${item.kicker}</p>
+          <h3 class="text-2xl font-extrabold mt-2">${item.title}</h3>
+          <p class="muted mt-3 leading-relaxed">${item.description}</p>
+          <button class="btn-secondary mt-5 !py-2 !px-4">View Bigger <i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+        </div>`;
+      achievementTrack.appendChild(article);
+      createImageCarousel(article.querySelector('.media-carousel'), item.images, item.title);
+    });
+
+    function advanceCarousels() {
+      document.querySelectorAll('.media-carousel').forEach((carousel) => {
+        const imgs = Array.from(carousel.querySelectorAll('img'));
+        const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+        if (imgs.length <= 1) return;
+        const current = Math.max(0, imgs.findIndex(img => img.classList.contains('active')));
+        const next = (current + 1) % imgs.length;
+        imgs[current]?.classList.remove('active');
+        dots[current]?.classList.remove('active');
+        imgs[next]?.classList.add('active');
+        dots[next]?.classList.add('active');
+      });
+    }
+
+    setInterval(advanceCarousels, 3300);
+
+    const modal = document.getElementById('detailModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalKicker = document.getElementById('modalKicker');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalGallery = document.getElementById('modalGallery');
+    const modalTags = document.getElementById('modalTags');
+    const modalLink = document.getElementById('modalLink');
+
+    function openModal(id) {
+      const item = dataItems[id];
+      if (!item) return;
+
+      modalKicker.textContent = item.kicker;
+      modalTitle.textContent = item.title;
+      modalDesc.textContent = item.description;
+      modalGallery.innerHTML = item.images.map((src, i) => `
+        <img src="${src}" alt="${item.title} ${i + 1}" class="image-natural glass" onerror="this.style.display='none'">
+      `).join('');
+      modalTags.innerHTML = item.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+      if (item.link) {
+        modalLink.href = item.link;
+        modalLink.classList.remove('hidden');
+      } else {
+        modalLink.classList.add('hidden');
+      }
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    document.addEventListener('click', (e) => {
+      const trigger = e.target.closest('[data-open-modal]');
+      if (trigger) openModal(trigger.dataset.openModal);
+    });
+
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    const portraitSlides = Array.from(document.querySelectorAll('.portrait-slide'));
+    let portraitIndex = 0;
+
+    setInterval(() => {
+      if (portraitSlides.length <= 1) return;
+      portraitSlides[portraitIndex].classList.remove('active');
+      portraitIndex = (portraitIndex + 1) % portraitSlides.length;
+      portraitSlides[portraitIndex].classList.add('active');
+    }, 3800);
+
+    document.getElementById('prevAchievement').addEventListener('click', () => achievementTrack.scrollBy({ left: -440, behavior: 'smooth' }));
+    document.getElementById('nextAchievement').addEventListener('click', () => achievementTrack.scrollBy({ left: 440, behavior: 'smooth' }));
+
+    async function loadGitHubProjects() {
+      const box = document.getElementById('githubProjects');
+      box.innerHTML = '<div class="glass rounded-3xl p-6 muted">Loading public repositories...</div>';
+
+      try {
+        const res = await fetch('https://api.github.com/users/aditirathi33/repos?sort=updated&per_page=6');
+        if (!res.ok) throw new Error('GitHub API unavailable');
+
+        const repos = await res.json();
+        const filtered = repos.filter(r => !r.fork).slice(0, 6);
+
+        box.innerHTML = filtered.map(repo => `
+          <a class="repo-card glass rounded-3xl p-6" href="${repo.html_url}" target="_blank">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <h4 class="font-extrabold text-xl">${repo.name}</h4>
+                <p class="muted mt-3">${repo.description || 'Public GitHub project by Aditi Rathi.'}</p>
+              </div>
+              <i class="fab fa-github text-2xl gradient-text"></i>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-5">
+              <span class="tag">${repo.language || 'Code'}</span>
+              <span class="tag">★ ${repo.stargazers_count}</span>
+              <span class="tag">Updated</span>
+            </div>
+          </a>
+        `).join('') || fallbackRepos();
+
+      } catch (err) {
+        box.innerHTML = fallbackRepos();
+      }
+    }
+
+    function fallbackRepos() {
+      return `
+        <a class="repo-card glass rounded-3xl p-6" href="https://github.com/aditirathi33" target="_blank">
+          <h4 class="font-extrabold text-xl">GitHub Projects</h4>
+          <p class="muted mt-3">Could not fetch live repos right now. Visit GitHub to view latest projects.</p>
+          <span class="tag mt-5">Open GitHub</span>
+        </a>`;
+    }
+
+    function extractMediumImage(item) {
+      if (item.thumbnail && item.thumbnail.trim()) return item.thumbnail;
+
+      const html = item.content || item.description || '';
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+
+      const img = wrapper.querySelector('img');
+      if (img && img.src) return img.src;
+
+      return 'medium-fallback.jpg';
+    }
+
+    function stripHtml(html) {
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html || '';
+      return (wrapper.textContent || wrapper.innerText || '').trim();
+    }
+
+    async function loadLivePosts() {
+      const box = document.getElementById('livePosts');
+      box.innerHTML = fallbackPosts();
+
+      try {
+        const feedUrl = encodeURIComponent('https://medium.com/feed/@aditirathi340');
+        const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feedUrl}`);
+        if (!res.ok) throw new Error('Medium feed unavailable');
+
+        const data = await res.json();
+
+        const posts = (data.items || []).slice(0, 2).map(item => {
+          const img = extractMediumImage(item);
+          const excerpt = stripHtml(item.description || item.content || '').slice(0, 105);
+
+          return `
+            <a class="post-card glass rounded-3xl p-4" href="${item.link}" target="_blank">
+              <div class="h-44 rounded-2xl overflow-hidden bg-black/20 grid place-items-center">
+                <img
+                  src="${img}"
+                  class="w-full h-full object-cover"
+                  alt="${item.title}"
+                  referrerpolicy="no-referrer"
+                  onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;text-center p-5&quot;><i class=&quot;fab fa-medium text-4xl gradient-text&quot;></i><p class=&quot;muted mt-3&quot;>Medium Article</p></div>'"
+                >
+              </div>
+              <p class="section-kicker mt-4">Medium</p>
+              <h4 class="font-extrabold text-lg mt-2">${item.title}</h4>
+              <p class="muted text-sm mt-2">${excerpt}${excerpt.length >= 105 ? '...' : ''}</p>
+            </a>`;
+        }).join('');
+
+        box.innerHTML = posts + fallbackPosts(false);
+
+      } catch (err) {
+        box.innerHTML = fallbackPosts();
+      }
+    }
+
+    function fallbackPosts(includeMedium = true) {
+      const medium = includeMedium ? `
+        <a class="post-card glass rounded-3xl p-6" href="https://medium.com/@aditirathi340" target="_blank">
+          <i class="fab fa-medium text-3xl gradient-text"></i>
+          <p class="section-kicker mt-5">Medium</p>
+          <h4 class="font-extrabold text-lg mt-2">Read my latest blogs</h4>
+          <p class="muted mt-2">Live feed unavailable, opening profile instead.</p>
+        </a>` : '';
+
+      return `${medium}
+        <a class="post-card glass rounded-3xl p-6" href="https://instagram.com/okditi" target="_blank">
+          <i class="fab fa-instagram text-3xl gradient-text"></i>
+          <p class="section-kicker mt-5">Instagram</p>
+          <h4 class="font-extrabold text-lg mt-2">Latest visual updates</h4>
+          <p class="muted mt-2">Check out my latest Insta posts here</p>
+        </a>
+        <a class="post-card glass rounded-3xl p-6" href="https://x.com/AditiRathi33" target="_blank">
+          <i class="fab fa-x-twitter text-3xl gradient-text"></i>
+          <p class="section-kicker mt-5">X</p>
+          <h4 class="font-extrabold text-lg mt-2">Latest thoughts</h4>
+          <p class="muted mt-2">Check out my latest X posts here</p>
+        </a>
+        <a class="post-card glass rounded-3xl p-6" href="https://linkedin.com/in/aditirathi33" target="_blank">
+          <i class="fab fa-linkedin text-3xl gradient-text"></i>
+          <p class="section-kicker mt-5">LinkedIn</p>
+          <h4 class="font-extrabold text-lg mt-2">Professional updates</h4>
+          <p class="muted mt-2">Check out my latest LinkedIn posts here</p>
+        </a>`;
+    }
+
+    document.getElementById('refreshLive').addEventListener('click', loadLivePosts);
+
+    loadGitHubProjects();
+    loadLivePosts();
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      themeToggle.querySelector('i').className = document.body.classList.contains('light') ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    });
+
+    const mobileMenu = document.getElementById('mobileMenu');
+    document.getElementById('menuToggle').addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const scrollTop = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => scrollTop.classList.toggle('hidden', window.scrollY < 500));
+    scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</body>
+</html>
