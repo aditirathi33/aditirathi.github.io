@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <title>Aditi Rathi | Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #a1aed4;
+    }
+    .badge {
+      margin: 5px;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .carousel-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .carousel-item {
+      flex: none;
+      scroll-snap-align: start;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    #scrollToTopBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #80aed4;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 100;
+      display: none;
+    }
+    .light-mode {
+  background-color: #c3c6a2;
+  color: #111111;
+}
+
+.light-mode .section-title,
+.light-mode a,
+.light-mode .text-gray-300,
+.light-mode p,
+.light-mode h3,
+.light-mode .text-white {
+  color: #111111 !important;
+}
+
+.light-mode .bg-blue-800,
+.light-mode .bg-indigo-800,
+.light-mode .bg-gray-900,
+.light-mode .bg-indigo-950 {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border: 1px solid #ddd;
+}
+
+.light-mode .text-amber-400 {
+  color: #b45309 !important;
+}
+
+.light-mode .hover\:text-amber-400:hover {
+  color: #92400e !important;
+}
+
+.light-mode a, .light-mode .section-title, .light-mode .text-gray-300 {
+  color: black !important;
+}
+
+  </style>
+</head>
+
+<body  class="bg-black text-white overflow-x-hidden">
+  <div id="particles-js"></div>
+  <button id="scrollToTopBtn" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+  <!-- Navigation -->
+  <nav class="w-full fixed top-0 z-50 bg-blue-800 shadow-lg">
+    <div class="container mx-auto flex flex-wrap items-center justify-between py-4 px-6">
+      <div class="text-xl font-bold text-blue-300">Aditi Rathi</div>
+      <div class="space-x-4 flex flex-wrap justify-center w-full md:w-auto mt-4 md:mt-0">
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#experience" class="hover:text-blue-400">Experience</a>
+        <a href="#projects" class="hover:text-blue-400">Projects</a>
+        <a href="#education" class="hover:text-blue-400">Education</a>
+        <a href="#blog" class="hover:text-amber-400">Blog</a>
+        <a href="#contact" class="hover:text-amber-400">Contact</a>
+        <a href="res.pdf" target="_blank" class="hover:text-amber-400">Resume</a>
+        <button id="modeToggle" class="text-white text-sm border px-2 py-1 rounded hover:bg-white hover:text-black transition">☀️</button>
+      </div>
+    </div>
+  </nav>
+
+  
+
+  <!-- Hero Section with Image + Carousel -->
+  <section class="min-h-screen flex flex-col items-center justify-center pt-32 text-center">
+    <img src="1.jpg" alt="Aditi" class="square h-80 w-90 object-cover border-1 border-white shadow-lg mb-6" />
+    <h1 class="text-5xl md:text-7xl font-bold" data-aos="zoom-in">Hi, I'm Aditi</h1>
+    <p class="mt-4 text-lg md:text-2xl" data-aos="fade-up">A Tiny Force With Massive Potential</p>
+    <div class="mt-6 space-x-4">
+      <a href="https://linkedin.com/in/aditirathi33" class="text-white text-2xl hover:text-amber-400"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/aditirathi33" class="text-white text-2xl hover:text-amber-400"><i class="fab fa-github"></i></a>
+      <a href="mailto:aditirathi340@gmail.com" class="text-white text-2xl hover:text-amber-400"><i class="fas fa-envelope"></i></a>
+    </div>
+    
+  </section>
+  <!-- About Section -->
+  <section id="about" class="container mx-auto py-16 px-6">
+    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+    <p class="text-gray-300 leading-relaxed" data-aos="fade-up">
+      It looks like you’ve stumbled upon my digital world glad to have you here! </p>
+    <p class="text-gray-300 leading-relaxed" data-aos="fade-up">
+      I’m Aditi Rathi, a Computer Science Engineering student with a passion for AI, Machine Learning, and App Development. I love turning ideas into reality—whether it’s building intelligent solutions or experimenting with tech. And if I had to pick a coding language to represent me? Java—structured, powerful, and ever-evolving!
+    </p>
+
+    
+     <p class="text-gray-300 mt-4" data-aos="fade-up" data-aos-delay="100">Beyond tech, I’m passionate about social impact, equality, and sustainability. When I’m not building something new, I’m dreaming, travelling, singing, dancing, or embracing my cat-like curiosity! </p>
+    <p class="text-gray-300 mt-4" data-aos="fade-up" data-aos-delay="100">I believe that big changes start small, and I’m here to make a difference—one project, one idea, and one step at a time.</p>
+    <p class="text-gray-300 mt-4" data-aos="fade-up" data-aos-delay="200">
+      Let’s collaborate, innovate, and build the future together. 🚀
+    </p>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="container mx-auto py-16 px-6">
+    <h2 class="section-title" data-aos="fade-up">Experience</h2>
+    <ul class="list-disc list-inside space-y-3 text-gray-300">
+      <li data-aos="fade-up"><b>Chair Person – ACM PES MCOE:</b> Feb 2025 - Feb 2026 <br> Led workshops, hackathons, and events to boost tech culture.</li>
+      <li data-aos="fade-up" data-aos-delay="100"><b>Full Stack Intern – Greeneye Technologies Ltd, UK:</b> <br>Built platform-adaptive chatbot and web interface.</li>
+      <li data-aos="fade-up" data-aos-delay="100"><b>Social Media Incharge – Forengers, NGO:</b> Jan 2023 - Jan 2025<br>Managed campaigns and graphics for social outreach, helping increase engagement across platforms.</li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container mx-auto py-16 px-6">
+    <h2 class="section-title" data-aos="fade-up">Projects</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-blue-800 p-4 rounded shadow" data-aos="zoom-in">
+        <h3 class="text-lg font-bold">AI-Based Indian Recipe Generator</h3>
+        <p class="text-gray-300">Built a smart recipe recommendation app using Python, Streamlit, and Firebase. <br>The app suggests personalized vegetarian meals based on user-input ingredients using rule-based logic, with scope to scale using TF-IDF and cosine similarity for intelligent matching.</p>
+      </div>
+      <div class="bg-blue-800 p-4 rounded shadow" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-lg font-bold">Disaster Resilience App</h3>
+        <p class="text-gray-300">Android + Firebase solution for sending SOS alerts with location in disaster scenarios.</p>
+      </div>
+      <div class="bg-blue-800 p-4 rounded shadow" data-aos="zoom-in" data-aos-delay="100">
+        <h3 class="text-lg font-bold">CineMatch – Movie Recommendation System</h3>
+        <p class="text-gray-300">Built a hybrid recommender using TF-IDF, CountVectorizer, and SVD over TMDB and MovieLens datasets.<br>Deployed as a Streamlit app integrating both content-based and collaborative filtering models.</p>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="container mx-auto py-16 px-6">
+    <h2 class="section-title" data-aos="fade-up">Education</h2>
+    <p class="text-gray-300">Bachelor of Engineering in Computer Science<br>Savitribai Phule Pune University (2022–2026)<br>CGPA(Aggregate of 6 sem): 8.54</p>
+    <p class="mt-4">Relevant Courses: AI, ML, OS, NLP, Cloud Computing, DSA</p>
+  </section>
+
+<!-- Awards Section -->
+  <section id="awards" class="container mx-auto py-16 px-6">
+    <h2 class="section-title" data-aos="fade-up">Achievements and Extracurricular</h2>
+    <ul class="list-disc list-inside space-y-3 text-gray-300">
+      <li data-aos="fade-right">Published Author of the Book 'Back To The Seventeen'</li>
+      <li data-aos="fade-right" data-aos-delay="100">ACM Design Co-Lead (2024)</li>
+      <li data-aos="fade-right" data-aos-delay="200">Worked as Social Media Manager At Sanguine</li>
+      <!--<li data-aos="fade-right" data-aos-delay="300">✨ 2nd Place at ACM Design Championship, PES MCOE Chapter.</li>-->
+    </ul>
+  </section>
+
+
+<section id="blog" class="container mx-auto py-16 px-6">
+  <h2 class="section-title" data-aos="fade-right">Blog</h2>
+  <div class="space-y-4">
+
+    <article class="bg-indigo-800 p-4 rounded shadow">
+      <h3 class="text-xl font-bold">
+        <a href="https://medium.com/@aditirathi340/launch-android-build-your-first-app-3f63686ac064" target="_blank" rel="noopener noreferrer">
+          Launch Android: Build your First App
+        </a>
+      </h3>
+      <p class="text-gray-300">Hey everyone! I’m Aditi Rathi, and I’m thrilled to share this article with you!...</p>
+    </article>
+
+    <article class="bg-indigo-800 p-4 rounded shadow">
+      <h3 class="text-xl font-bold">
+        <a href="https://unwindingtheknots.blogspot.com/2021/03/it-should-be-new-start-in-that-old-life.html" target="_blank" rel="noopener noreferrer">
+          It should be the new start in that old life.
+        </a>
+      </h3>
+      <p class="text-gray-300">Hello everyone it's Aditi Rathi. Today I....</p>
+    </article>
+
+    <article class="bg-indigo-800 p-4 rounded shadow">
+      <h3 class="text-xl font-bold">
+        <a href="https://unwindingtheknots.blogspot.com/2021/01/you-and-iwe-are-more-than-this.html" target="_blank" rel="noopener noreferrer">
+          You And I we are more than this.
+        </a>
+      </h3>
+      <p class="text-gray-300">(A girl writing in a diary)  Day 127,Today I...</p>
+    </article>
+
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-900 py-16 px-6">
+  <div class="container mx-auto text-center">
+    <h2 class="section-title" data-aos="fade-left">Contact Me</h2>
+
+    <!-- Clickable Email -->
+    <p class="text-gray-300 text-lg mt-4" data-aos="fade-up">
+      Want to collaborate or just say hi? Drop me an email at:
+    </p>
+    <a href="mailto:aditirathi340@gmail.com" 
+       class="text-amber-400 text-xl font-semibold underline hover:text-amber-300 transition-all duration-200 inline-block mt-2">
+      aditirathi340@gmail.com
+    </a>
+
+    <!-- Follow Me Section -->
+    <p class="text-gray-300 text-lg mt-8" data-aos="fade-up" data-aos-delay="100">
+      Or follow me on:
+    </p>
+    <div class="flex justify-center gap-6 mt-4 text-2xl" data-aos="zoom-in" data-aos-delay="200">
+      <a href="https://instagram.com/okditi" target="_blank" class="text-pink-400 hover:text-pink-300 transition">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://x.com/AditiRathi33" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+        <i class="fab fa-twitter"></i> 
+      </a>
+      <a href="https://linkedin.com/in/aditirathi33" target="_blank" class="text-blue-500 hover:text-blue-400 transition">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://medium.com/@aditirathi340" target="_blank" class="text-white hover:text-gray-400 transition">
+        <i class="fab fa-medium"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-indigo-950 text-center py-6 text-gray-400">
+    © 2025 Aditi Rathi | All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#ffffff' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#ffffff',
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'repulse' },
+          onclick: { enable: true, mode: 'push' },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+    
+
+    window.onscroll = function () {
+      document.getElementById("scrollToTopBtn").style.display = window.scrollY > 300 ? "block" : "none";
+    }
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    document.getElementById("modeToggle").addEventListener("click", () => {
+  document.body.classList.toggle("light-mode");
+});
+
+  </script>
+</body>
+
+</html>
