@@ -108,7 +108,7 @@
       pointer-events: none;
       overflow: hidden;
       opacity: .9;
-      transition: opacity .35s ease, visibility .35s ease;
+      transition: opacity .35s ease;
     }
 
     body.light .cosmic-sky {
@@ -116,31 +116,7 @@
       visibility: hidden;
     }
 
-    .cosmic-sky::before {
-      content: "";
-      position: absolute;
-      inset: -18%;
-      background:
-        radial-gradient(ellipse at 28% 32%, rgba(125,211,252,.20), transparent 30%),
-        radial-gradient(ellipse at 70% 46%, rgba(167,139,250,.18), transparent 34%),
-        radial-gradient(ellipse at 44% 72%, rgba(52,211,153,.10), transparent 28%);
-      filter: blur(28px);
-      opacity: .72;
-      animation: nebulaFlow 28s ease-in-out infinite alternate;
-    }
-
-    .cosmic-sky::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 22% 18%, rgba(255,255,255,.8) 0 1px, transparent 2px),
-        radial-gradient(circle at 76% 26%, rgba(255,255,255,.7) 0 1px, transparent 2px),
-        radial-gradient(circle at 65% 70%, rgba(125,211,252,.75) 0 1px, transparent 2px),
-        radial-gradient(circle at 38% 55%, rgba(255,255,255,.65) 0 1px, transparent 2px);
-      opacity: .55;
-      animation: twinkleStars 3.7s ease-in-out infinite alternate;
-    }
+    
 
     .stars {
       position: absolute;
@@ -302,19 +278,6 @@
       border: 1px solid var(--border);
       backdrop-filter: blur(22px);
       box-shadow: 0 26px 90px rgba(0,0,0,.24);
-    }
-
-    .hero-text-box {
-      background: rgba(5, 12, 25, 0.96);
-      border: 1px solid rgba(125, 211, 252, 0.26);
-      backdrop-filter: none;
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.46);
-    }
-
-    body.light .hero-text-box {
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(15, 23, 42, 0.12);
-      box-shadow: 0 18px 55px rgba(37, 99, 235, 0.14);
     }
 
     .muted { color: var(--muted); }
@@ -545,7 +508,7 @@
         <a href="#social" class="nav-link">Social</a>
         <a href="#live" class="nav-link">Live</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="res.pdf" target="_blank" class="btn-secondary !py-2 !px-4">Resume</a>
+        <a href="AditiRathi01.pdf" target="_blank" class="btn-secondary !py-2 !px-4">Resume</a>
       </div>
 
       <div class="flex items-center gap-3">
@@ -602,9 +565,10 @@
           <div class="relative h-full rounded-[1.9rem] overflow-hidden">
             <img class="portrait-slide active" src="1.jpg" alt="Aditi portrait 1" />
             <img class="portrait-slide" src="2(2).jpg" alt="Aditi portrait 2" />
+            
             <div class="absolute inset-x-5 bottom-5 glass rounded-2xl p-4">
               <p class="font-extrabold text-xl">A Tiny Force With Massive Potential</p>
-              <p class="muted text-sm mt-1">AI • Backend • Computer Vision • Creative Tech</p>
+              <p class="muted text-sm mt-1">CSE’26 | Intern @ Arvillium | AI/ML, Backend Systems, Computer Vision And Automation</p>
             </div>
           </div>
         </div>
@@ -620,6 +584,9 @@
         <p class="muted mt-6 text-lg leading-relaxed">
           Hi! I'm Aditi Rathi, a Computer Science Engineering student passionate about building tech that solves real-world problems. I enjoy exploring how intelligent systems can be built using code, data, and creativity.
         </p>
+        <p class="muted mt-6 text-lg leading-relaxed">
+          Fun Fact: Powered by caffeine, curiosity, code, and cat cuddles.
+          </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
@@ -654,8 +621,10 @@
     <div class="max-w-7xl mx-auto">
       <div class="max-w-3xl reveal">
         <p class="section-kicker">Selected Work</p>
-        <h2 class="section-title mt-4">featured case study + live GitHub projects.</h2>
-        <p class="muted mt-5 text-lg">TRINETRA stays as the main visual story. CookWise and Disaster Resilience remain smaller side projects, while GitHub repositories can auto-load below.</p>
+        <h2 class="section-title mt-4">The Build Dump</h2>
+        <p class="muted mt-5 text-lg">Here’s a little collection of things I made while pretending I had everything under control.
+
+Projects, experiments, chaos, and a little bit of “wait… this actually works?”</p>
       </div>
 
       <article class="case-card glass rounded-[2rem] p-4 md:p-6 mt-12 reveal" data-open-modal="trinetra">
@@ -672,7 +641,7 @@
 
           <div class="p-3 md:p-5 flex flex-col justify-between">
             <div>
-              <span class="tag">Featured Project • Click to expand</span>
+              <span class="tag">Certified Cool Project • Click to Open</span>
               <h3 class="text-4xl md:text-5xl font-extrabold tracking-[-0.05em] mt-5">TRINETRA</h3>
               <p class="gradient-text font-extrabold text-xl mt-2">AI-Powered Smart Glasses for Visually Impaired Users</p>
               <p class="muted mt-5 leading-relaxed text-lg">Assistive wearable system using Raspberry Pi 5, YOLOv8, OpenCV, face recognition, ultrasonic obstacle detection, and offline audio feedback to support safer navigation.</p>
@@ -718,9 +687,9 @@
     <div class="max-w-7xl mx-auto">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
         <div>
-          <p class="section-kicker reveal">Achievements</p>
-          <h2 class="section-title mt-4 reveal">click any card to expand.</h2>
-          <p class="muted mt-5 max-w-2xl reveal">Each card has its own image carousel and opens into a bigger detail view.</p>
+          <p class="section-kicker reveal">Tiny wins, big memories</p>
+          <h2 class="section-title mt-4 reveal">Moments that made it out of the camera roll</h2>
+          <p class="muted mt-5 max-w-2xl reveal"> Tap a card and let the magic unfold</p>
         </div>
         <div class="flex gap-3 reveal">
           <button id="prevAchievement" class="btn-secondary !px-4"><i class="fa-solid fa-arrow-left"></i></button>
@@ -823,14 +792,14 @@
         kicker: 'Featured Project',
         title: 'TRINETRA — AI-Powered Smart Glasses',
         description: 'Assistive wearable system using Raspberry Pi 5, computer vision, YOLOv8, face recognition, ultrasonic obstacle detection, offline inference, and speech-based guidance for visually impaired users.',
-        images: ['trinetra.jpg','trinetra01.jpg','trinetra02.jpg','trinetra03.jpg'],
+        images: ['trinetra.jpg','trinetra01.jpg','trinetra02.jpg','trinetra03.jpg','trinetra04.jpg'],
         tags: ['Python','OpenCV','YOLOv8','Raspberry Pi 5','Pi Camera','GPIO','Edge AI']
       },
       winner: {
         kicker: 'Achievement',
         title: 'National Level Project Competition Winner',
         description: 'Won first prize for TRINETRA, an AI-powered smart glasses project for visually impaired users.',
-        images: ['achievement-trinetra.jpg','trinetra.jpg','trinetra01.jpg'],
+        images: ['achievement-trinetra.jpg','trinetra.jpg','trinetra01.jpg',,'trinetra02.jpg','trinetra03.jpg','trinetra04.jpg','trinetra04.jpg'],
         tags: ['Award','TRINETRA','AI','Assistive Tech']
       },
       forengers: {
@@ -844,7 +813,7 @@
         kicker: 'Published Author',
         title: 'Back to the Seventeen',
         description: 'Published creative work showing my writing, storytelling, and expressive side beyond coding.',
-        images: ['book.jpg','book01.jpg'],
+        images: ['book.jpg','book02.jpg' ,'book01.jpg'],
         tags: ['Author','Writing','Creative'],
         link: 'https://www.amazon.in/Back-Seventeen-Aditi-Rathi/dp/1684948355'
       },
@@ -852,16 +821,17 @@
         kicker: 'Leadership',
         title: 'ACM Leadership',
         description: 'Led student initiatives, design work, technical sessions, workshops, and community learning activities.',
-        images: ['acm.jpg','acm01.jpg','acm02.jpg'],
+        images: ['acm.jpg','acm01.jpg','acm02.jpg','acm03.jpg'],
         tags: ['Leadership','ACM','Workshops','Community']
       }
     };
 
     const achievementCards = [
       { id: 'winner', icon: 'fa-solid fa-trophy' },
+      { id: 'acm', icon: 'fa-solid fa-users' },
       { id: 'forengers', icon: 'fa-solid fa-hands-holding-child' },
-      { id: 'book', icon: 'fa-solid fa-book-open' },
-      { id: 'acm', icon: 'fa-solid fa-users' }
+      { id: 'book', icon: 'fa-solid fa-book-open' }
+      
     ];
 
     function createImageCarousel(container, images, title) {
@@ -1105,19 +1075,19 @@
           <i class="fab fa-instagram text-3xl gradient-text"></i>
           <p class="section-kicker mt-5">Instagram</p>
           <h4 class="font-extrabold text-lg mt-2">Latest visual updates</h4>
-          <p class="muted mt-2">Instagram live posts need API access; profile link is shown as fallback.</p>
+          <p class="muted mt-2">Check out my latest Insta posts here</p>
         </a>
         <a class="post-card glass rounded-3xl p-6" href="https://x.com/AditiRathi33" target="_blank">
           <i class="fab fa-x-twitter text-3xl gradient-text"></i>
           <p class="section-kicker mt-5">X</p>
           <h4 class="font-extrabold text-lg mt-2">Latest thoughts</h4>
-          <p class="muted mt-2">X timeline needs API access; profile link is shown as fallback.</p>
+          <p class="muted mt-2">Check out my latest X posts here</p>
         </a>
         <a class="post-card glass rounded-3xl p-6" href="https://linkedin.com/in/aditirathi33" target="_blank">
           <i class="fab fa-linkedin text-3xl gradient-text"></i>
           <p class="section-kicker mt-5">LinkedIn</p>
           <h4 class="font-extrabold text-lg mt-2">Professional updates</h4>
-          <p class="muted mt-2">LinkedIn posts usually need official integration; profile link is shown as fallback.</p>
+          <p class="muted mt-2">Check out my latest LinkedIn posts here</p>
         </a>`;
     }
 
